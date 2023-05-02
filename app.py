@@ -337,11 +337,11 @@ def app_layout():
 
 
     st.header('Distancia e IPM de los barrios sin colegios')
-    gb=GridOptionsBuilder.from_dataframe(barriossincol[{ 'BARRIO','distanciakm', 'ipm', 'nearcolegio'}].sort_values(by='ipm',ascending=False))
+    gb=GridOptionsBuilder.from_dataframe(barriossincol[['BARRIO', 'distanciakm', 'IPM']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
-    grid_response=AgGrid(barriossincol[{ 'BARRIO_left','distanciakm', 'ipm', 'nearcolegio'}].sort_values(by='ipm',ascending=False), gridOptions=gridOptions,
+    grid_response=AgGrid(barriossincol[['BARRIO', 'distanciakm', 'IPM']], gridOptions=gridOptions,
                         height=400,
                         width='100%',
                         data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
