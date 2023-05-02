@@ -629,7 +629,7 @@ def app_layout():
     barrios_siniglesias=just_suroccidente[~just_suroccidente['BARRIO'].isin(iglesias['index_righ'])]
     barrios_siniglesias=barrios_siniglesias[['BARRIO', 'LOCALIDAD', 'ipm', 'geometry']]
     barrios_siniglesias=barrios_siniglesias.sort_values(by='ipm', ascending=False)
-    gb=GridOptionsBuilder.from_dataframe(barrios_siniglesias[{ 'BARRIO', 'LOCALIDAD', 'ipm'}])
+    gb=GridOptionsBuilder.from_dataframe(barrios_siniglesias[[ 'BARRIO', 'LOCALIDAD', 'ipm']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
@@ -658,7 +658,7 @@ def app_layout():
     grupodecolegios=grupodecolegios[{ 'BARRIO_left', 'NOMBRE_SED'}]
     iglesias=iglesias[{ 'BARRIO', 'PARROQUIA'}]
     st.header('Revisiones por barrio')
-    BD2021_suroccidente2=BD2021_suroccidente[{'RAZON_SOCIAL', 'CIIU', 'BARRIO'}]
+    BD2021_suroccidente2=BD2021_suroccidente[['RAZON_SOCIAL', 'CIIU', 'BARRIO']]
     st.write('En esta seccion se cada una de las tematicas antes mencionadas. En el caso de no tener parques o iglesias, se muestra la mas cercana')
     st.header('7 DE AGOSTO')
     st.header('Parques:')
