@@ -218,7 +218,7 @@ def app_layout():
     conteodecolegios=conteodecolegios[['NOMBRE_SED', 'BARRIO_left', 'geometry', 'ipm']]
     grupodecolegios=conteodecolegios
     conteodecolegios=conteodecolegios.groupby('BARRIO_left').count()
-    conteodecolegios['ipm']=conteodecolegios2.groupby('BARRIO_left').mean()['ipm']
+    conteodecolegios['ipm']=conteodecolegios2.groupby('BARRIO_left').agg({'ipm':'mean'})
     conteodecolegios.columns=['conteo', 'geometry', 'ipm']
     
     conteodecolegios.fillna(0,inplace=True)
