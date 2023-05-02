@@ -457,8 +457,10 @@ def app_layout():
                         )
     barriossincol=grid_response['data']
     distribucion_priorizados=distribucion[distribucion['BARRIO'].str.contains('7 DE AGOSTO', na=False)]
-    distribucion_priorizados=distribucion_priorizados.append(distribucion[distribucion['BARRIO'].str.contains('CUCHILLA DE VILLATE', na=False)])
-    distribucion_priorizados=distribucion_priorizados.append(distribucion[distribucion['BARRIO'].str.contains('EL GOLFO', na=False)])
+    # distribucion_priorizados=distribucion_priorizados.append(distribucion[distribucion['BARRIO'].str.contains('CUCHILLA DE VILLATE', na=False)])
+    distribucion_priorizados=pd.concat([distribucion_priorizados,distribucion[distribucion['BARRIO'].str.contains('CUCHILLA DE VILLATE', na=False)]])
+    # distribucion_priorizados=distribucion_priorizados.append(distribucion[distribucion['BARRIO'].str.contains('EL GOLFO', na=False)])
+    distribucion_priorizados=pd.concat([distribucion_priorizados,distribucion[distribucion['BARRIO'].str.contains('EL GOLFO', na=False)]])
     st.table(distribucion_priorizados)
 
     st.write('Para los barrios priorizados, tal como era de esperarse, se encuentra una frecuencia de empresas mucho menor, esto puede deberse a temas de delincuencia que trae dificultad de acceso en la zona, lo que termina generando pocas oportunidades de empleo en la zona.  ')
@@ -470,11 +472,11 @@ def app_layout():
     CIIUs_ELGOLFO=BD2021_suroccidente[BD2021_suroccidente['BARRIO'].str.contains('EL GOLFO', na=False)]
    
     ## group by CIIU and count and sum ACTIVOS
-    CIIUs_7DEAGOSTO=CIIUs_7DEAGOSTO.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_7DEAGOSTO=CIIUs_7DEAGOSTO.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_7DEAGOSTO=pd.DataFrame(CIIUs_7DEAGOSTO)
-    CIIUs_CUCHILLADEVILLATE=CIIUs_CUCHILLADEVILLATE.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_CUCHILLADEVILLATE=CIIUs_CUCHILLADEVILLATE.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_CUCHILLADEVILLATE=pd.DataFrame(CIIUs_CUCHILLADEVILLATE)
-    CIIUs_ELGOLFO=CIIUs_ELGOLFO.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_ELGOLFO=CIIUs_ELGOLFO.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_ELGOLFO=pd.DataFrame(CIIUs_ELGOLFO)
 
 
