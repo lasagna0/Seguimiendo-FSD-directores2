@@ -12,6 +12,11 @@ import json
 from esridump.dumper import EsriDumper
 import nbformat 
 
+# hide Hamburger menu
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
+
 
 baqBARRIO=gpd.read_file('baqBARRIO.shp')
 baqlocalidad=gpd.read_file('baqlocalidad.shp')
