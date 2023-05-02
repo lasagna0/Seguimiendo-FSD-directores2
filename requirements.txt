@@ -1,2 +1,7 @@
 streamlit-aggrid
 plotly
+geopandas
+shapely
+json
+esridump
+nbformat

@@ -6,8 +6,6 @@ import plotly
 import plotly.express as px
 import plotly.offline as pyo
 import plotly.graph_objs as go
-# Set notebook mode to work in offline
-pyo.init_notebook_mode()
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 import json
