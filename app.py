@@ -656,7 +656,7 @@ def app_layout():
     st.write(barrios_siniglesias[['BARRIO', 'LOCALIDAD', 'ipm', 'nearest_iglesia']])
     parques=parques[[ 'BARRIO', 'NOMBRE']]
     grupodecolegios=grupodecolegios[[ 'BARRIO_left', 'NOMBRE_SED']]
-    iglesias=iglesias[{ 'BARRIO', 'PARROQUIA'}]
+    iglesias=iglesias[[ 'BARRIO', 'PARROQUIA']]
     st.header('Revisiones por barrio')
     BD2021_suroccidente2=BD2021_suroccidente[['RAZON_SOCIAL', 'CIIU', 'BARRIO']]
     st.write('En esta seccion se cada una de las tematicas antes mencionadas. En el caso de no tener parques o iglesias, se muestra la mas cercana')
