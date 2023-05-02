@@ -442,11 +442,11 @@ def app_layout():
     ## ADD IPM COLUMN TO DISTRIBUTION
     distribucion=distribucion.merge(just_suroccidente, left_on='BARRIO', right_on='BARRIO')
     distribucion=distribucion[['BARRIO','RAZON_SOCIAL','ipm']]
-    gb=GridOptionsBuilder.from_dataframe(distribucion[{ 'BARRIO','RAZON_SOCIAL', 'ipm'}])
+    gb=GridOptionsBuilder.from_dataframe(distribucion[[ 'BARRIO','RAZON_SOCIAL', 'ipm']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
-    grid_response=AgGrid(distribucion[{'BARRIO','RAZON_SOCIAL', 'ipm'}],
+    grid_response=AgGrid(distribucion[['BARRIO','RAZON_SOCIAL', 'ipm']],
                         height=400,
                         width='100%',
                         data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
