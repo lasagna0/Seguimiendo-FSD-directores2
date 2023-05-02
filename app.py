@@ -472,11 +472,11 @@ def app_layout():
     CIIUs_ELGOLFO=BD2021_suroccidente[BD2021_suroccidente['BARRIO'].str.contains('EL GOLFO', na=False)]
    
     ## group by CIIU and count and sum ACTIVOS
-    CIIUs_7DEAGOSTO=CIIUs_7DEAGOSTO.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_7DEAGOSTO=CIIUs_7DEAGOSTO.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_7DEAGOSTO=pd.DataFrame(CIIUs_7DEAGOSTO)
-    CIIUs_CUCHILLADEVILLATE=CIIUs_CUCHILLADEVILLATE.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_CUCHILLADEVILLATE=CIIUs_CUCHILLADEVILLATE.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_CUCHILLADEVILLATE=pd.DataFrame(CIIUs_CUCHILLADEVILLATE)
-    CIIUs_ELGOLFO=CIIUs_ELGOLFO.groupby('CIIU').agg(['RAZON_SOCIAL':'count', 'ACTIVOS':'sum']).sort_values(by='ACTIVOS', ascending=False)
+    CIIUs_ELGOLFO=CIIUs_ELGOLFO.groupby('CIIU').agg({'RAZON_SOCIAL':'count', 'ACTIVOS':'sum'}).sort_values(by='ACTIVOS', ascending=False)
     CIIUs_ELGOLFO=pd.DataFrame(CIIUs_ELGOLFO)
 
 
