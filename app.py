@@ -370,8 +370,11 @@ def app_layout():
     colegios_suroccidente=colegios_suroccidente[['NOMBRE_SED', 'ACTIVIDAD']]
     st.text(colegios_suroccidente.columns)
     result=colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('BETSABE ESPINOSA', na=False)]
-    result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('INSTITUCION EDUCATIVA DISTRITAL SONIA AHUMADA', na=False)])
-    result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('DAVID SANCHEZ', na=False)])
+    # result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('INSTITUCION EDUCATIVA DISTRITAL SONIA AHUMADA', na=False)])
+    result=pd.concat([result, colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('INSTITUCION EDUCATIVA DISTRITAL SONIA AHUMADA', na=False)]])
+    # result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('DAVID SANCHEZ', na=False)])
+    result=pd.concat([result, colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('DAVID SANCHEZ', na=False)]])
+    #append is deprecated
     st.table(result)
 
     st.write('Todas 3 instituciones tienen educación hasta Básica Secundaria Media, lo que permite una amplitud de población al realizar encuestas a trabajadores de instituciones. ')
