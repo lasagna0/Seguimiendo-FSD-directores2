@@ -580,7 +580,7 @@ def app_layout():
     barriossincol['nearest_parque']=barriossincol.apply(lambda x: get_nearest_parque(x['BARRIO']), axis=1)
     barriossincol['nearest_parque_distance']=barriossincol.apply(lambda x: get_nearest_parque_distance(x['BARRIO']), axis=1)
     barriossincol=barriossincol.sort_values(by='ipm', ascending=False)
-    gb=GridOptionsBuilder.from_dataframe(barriossincol[{ 'BARRIO', 'LOCALIDAD', 'ipm', 'nearest_parque', 'nearest_parque_distance'}])
+    gb=GridOptionsBuilder.from_dataframe(barriossincol[[ 'BARRIO', 'LOCALIDAD', 'ipm', 'nearest_parque', 'nearest_parque_distance']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
