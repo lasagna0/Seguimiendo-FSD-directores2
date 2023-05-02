@@ -365,7 +365,7 @@ def app_layout():
     st.write('Estos datos tomados de cercanía de instituciones serán una herramienta crucial al análisis exploratorio de las necesidades poblaciones de estos barrios, ya que un acercamiento a estos podría dar un muestreo de la situación, puesto que educadores y directivos, conocen de primera mano las dificultades que tiene el lugar, por su inmensa interacción que tiene con los jóvenes en su labor de educación. Mediante diálogos de Probarranquilla y la Fundación Santo Domingo, se determino que esta herramienta seria la mas eficaz por su amplitud de reconocimiento e información actualizada, siendo que su vez se elimina errores de medición por posibles incentivos perversos que existen al preguntarse directamente a los habitantes; a su vez ahorrándose costos de metodología extensiva. ')
 
     colegios_suroccidente=gpd.read_file('colegios.shp')
-    colegios_suroccidente=colegios_suroccidente[{'NOMBRE_SED', 'ACTIVIDAD'}]
+    colegios_suroccidente=colegios_suroccidente[['NOMBRE_SED', 'ACTIVIDAD']]
     ## reordenar columnas
     colegios_suroccidente=colegios_suroccidente[['NOMBRE_SED', 'ACTIVIDAD']]
 
