@@ -654,7 +654,7 @@ def app_layout():
     st.write('Encontramos la problematica de que los barrios priorizados no tienen iglesias, un problema de interaccion social, que puede hacer incurrir el IPM por diferentes generaciones')
     st.write('Los barrios sin iglesias mas cercanos a las iglesias son:')
     st.write(barrios_siniglesias[['BARRIO', 'LOCALIDAD', 'ipm', 'nearest_iglesia']])
-    parques=parques[{ 'BARRIO', 'NOMBRE'}]
+    parques=parques[[ 'BARRIO', 'NOMBRE']]
     grupodecolegios=grupodecolegios[{ 'BARRIO_left', 'NOMBRE_SED'}]
     iglesias=iglesias[{ 'BARRIO', 'PARROQUIA'}]
     st.header('Revisiones por barrio')
