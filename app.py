@@ -368,7 +368,7 @@ def app_layout():
     colegios_suroccidente=colegios_suroccidente[['NOMBRE_SED', 'ACTIVIDAD']]
     ## reordenar columnas
     colegios_suroccidente=colegios_suroccidente[['NOMBRE_SED', 'ACTIVIDAD']]
-
+    st.text(colegios_suroccidente.columns)
     result=colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('BETSABE ESPINOSA', na=False)]
     result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('INSTITUCION EDUCATIVA DISTRITAL SONIA AHUMADA', na=False)])
     result=result.append(colegios_suroccidente[colegios_suroccidente['NOMBRE_SED'].str.contains('DAVID SANCHEZ', na=False)])
