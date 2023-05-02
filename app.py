@@ -584,7 +584,7 @@ def app_layout():
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
-    grid_response=AgGrid(barriossincol[{'BARRIO', 'LOCALIDAD', 'ipm', 'nearest_parque', 'nearest_parque_distance'}].sort_values(by='ipm',ascending=False), gridOptions=gridOptions,
+    grid_response=AgGrid(barriossincol[['BARRIO', 'LOCALIDAD', 'ipm', 'nearest_parque', 'nearest_parque_distance']].sort_values(by='ipm',ascending=False), gridOptions=gridOptions,
                         height=400, 
                         width='100%',
                         data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
