@@ -683,6 +683,7 @@ def app_layout():
     if len(grupodecolegios[grupodecolegios['BARRIO_left']=='7 DE AGOSTO'])>0:
         st.write(grupodecolegios[grupodecolegios['BARRIO_left']=='7 DE AGOSTO'])
     else:
+        st.text(colegiooos.columns)
         nearest_colegio=colegiooos[colegiooos['BARRIO_left']=='7 DE AGOSTO']['nearcolegio'].values[0]
         nearest_colegio_distance=colegiooos[colegiooos['BARRIO_left']=='7 DE AGOSTO']['distanciakm'].values[0]
         st.write('El colegio mas cercano es: '+nearest_colegio+' a '+str(nearest_colegio_distance)+' metros'+', que se encuentra en otro barrio')
