@@ -337,6 +337,8 @@ def app_layout():
 
 
     st.header('Distancia e IPM de los barrios sin colegios')
+    #columns
+    st.text(barriossincol.columns)
     gb=GridOptionsBuilder.from_dataframe(barriossincol[['BARRIO', 'distanciakm', 'IPM']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
