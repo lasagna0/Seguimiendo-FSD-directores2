@@ -545,7 +545,7 @@ def app_layout():
     barrios_sinparques=just_suroccidente[~just_suroccidente['BARRIO'].isin(parques['BARRIO'])]
     barrios_sinparques=barrios_sinparques[['BARRIO', 'LOCALIDAD', 'ipm']]
     barrios_sinparques=barrios_sinparques.sort_values(by='ipm', ascending=False)
-    gb=GridOptionsBuilder.from_dataframe(barrios_sinparques[{ 'BARRIO', 'LOCALIDAD', 'ipm'}])
+    gb=GridOptionsBuilder.from_dataframe(barrios_sinparques[[ 'BARRIO', 'LOCALIDAD', 'ipm']])
     gb.configure_pagination(paginationAutoPageSize=True)
     gb.configure_side_bar()
     gridOptions=gb.build()
